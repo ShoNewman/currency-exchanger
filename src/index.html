@@ -5,9 +5,13 @@
 <body>
   <div class="container">
     <h1>Currency Exchange</h1>
-    <label for="location">Enter a location:</label>
-    <input id="location" type="text">
-    <button class="btn-success" id="weatherLocation">Exchange</button>
+    <form>
+      <label for="location">Enter a location:</label>
+      <input id="location" type="text">
+      <label for="exchange">Enter the amount you want to exchange:</label>
+      <input id="exchange" type="text">
+      <button class="btn-success" id="submit">Exchange</button>
+    </form>
     <div class="showErrors"></div>
     <div class="showExchange"></div>
   </div>

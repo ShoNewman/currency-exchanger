@@ -4,16 +4,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import currencyService from './js/currency-service.js';
 
-async function makeApiCall(location) {
-  const response = await currencyService.getCurrency(location);
+async function makeApiCall(location, currency) {
+  const response = await currencyService.getCurreny();
   if (response) {
-    console.log(response.conversion_rates[location]);
+    console.log(response.conversion_rates[location] * currency);
+
   }
 }
 
-
-$('#location').on('click', function() {
-  let location = $('#location').val();
-  makeApiCall(location);
+$(document).ready(function () {
+  $('#submit').on('click', function (e) {
+    e.preventDefault();
+    let location = $('#location').val();
+    let currency = parseInt($('#exchange').val());
+    console.log(currency);
+    makeApiCall(location, currency);
+  });
 });
-
