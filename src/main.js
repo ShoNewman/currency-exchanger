@@ -5,10 +5,12 @@ import './css/styles.css';
 import currencyService from './js/currency-service.js';
 
 async function makeApiCall(location, currency) {
-  const response = await currencyService.getCurreny();
+  const response = await currencyService.getCurreny(location, currency);
   if (response) {
-    console.log(response.conversion_rates[location] * currency);
-
+    let exchange = response.conversion_result;
+    $('.showExchange').text(`${exchange} currency`);
+  } else {
+    $('.showErrors').text(`There was an error: ${response.message}`);
   }
 }
 
