@@ -4,12 +4,18 @@
 </head>
 <body>
   <div class="container">
-    <h1>Currency Exchange</h1>
+    <h1 class="jumbotron">Currency Exchange</h1>
     <form>
-      <label for="location">Enter a location:</label>
-      <input id="location" type="text">
-      <label for="exchange">Enter the amount you want to exchange:</label>
-      <input id="exchange" type="text">
+      <div class="form-group">
+        <label for="location">Country</label>
+        <select class="form-control" id="location">
+          <option value="AED">AED</option>
+        </select>
+      <div class="form-group">
+        <label for="exchange">Enter the amount you want to exchange:</label>
+        <input type="email" class="form-control" id="exchange">
+      </div>
+      
       <button class="btn-success" id="submit">Exchange</button>
     </form>
     <div class="showErrors"></div>
