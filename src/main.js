@@ -8,6 +8,7 @@ async function makeApiCall(base, target, amount) {
   const response = await currencyService.getCurreny(base, target, amount);
   let exchange = response.conversion_result;
   if (response) {
+    $('.showExchange').show();
     $('.showExchange').text(`${exchange} ${base}`);
   } else {
     $('.showErrors').text(`There was an error: ${response.message}`);
